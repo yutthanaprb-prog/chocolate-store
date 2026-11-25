@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบหยิบสินค้า & พิมพ์ใบจ่าหน้า - CHOCOCRAFT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pack-page">
+  <div class="container">
+    <div class="no-print pack-header">
+      <h1>รายการรอแพ็ค & ใบจ่าหน้าพัสดุ</h1>
+      <div>
+        <button onclick="loadOrders()" class="btn-secondary">รีเฟรชข้อมูล</button>
+        <button onclick="window.print()" class="btn-primary">พิมพ์ใบจ่าหน้าทั้งหมด</button>
+      </div>
+    </div>
+
+    <div id="loading" class="no-print">กำลังโหลดรายการออเดอร์...</div>
+    <div id="orders-container"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    window.onload = loadOrders;
+  </script>
+</body>
+</html>

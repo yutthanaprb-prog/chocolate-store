@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHOCOCRAFT - ช็อกโกแลตแท่งโฮมเมดพรีเมียม</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>CHOCOCRAFT</h1>
+      <p>ช็อกโกแลตแท่งคัดเมล็ดโกโก้แท้ เข้มข้น หวานน้อย ละลายในปาก</p>
+      <a href="#order-section" class="btn-primary">เลือกช็อกโกแลตเลย</a>
+    </div>
+  </header>
+
+  <main class="container" id="order-section">
+    <h2>เลือกรสชาติที่คุณชอบ</h2>
+    <div class="product-grid">
+      <!-- SKU 1 -->
+      <div class="product-card">
+        <img src="./images/sku-dark70.jpg" alt="Dark 70% Signature" onerror="this.src='https://placehold.co/400x300/3e2723/ffffff?text=Dark+70%25'">
+        <h3>Dark 70% Signature</h3>
+        <p class="desc">ดาร์กช็อกโกแลตแท้ 70% หอมกลิ่นโกโก้คั่วเข้ม ขมปลายกำลังดี</p>
+        <p class="price">120 บาท / แท่ง</p>
+        <div class="qty-control">
+          <button type="button" onclick="updateQty(1, -1)">-</button>
+          <span id="qty-1">0</span>
+          <button type="button" onclick="updateQty(1, 1)">+</button>
+        </div>
+      </div>
+
+      <!-- SKU 2 -->
+      <div class="product-card">
+        <img src="./images/sku-hazelnut.jpg" alt="Hazelnut Crunch" onerror="this.src='https://placehold.co/400x300/5d4037/ffffff?text=Hazelnut+Crunch'">
+        <h3>Hazelnut Crunch</h3>
+        <p class="desc">มิลก์ช็อกโกแลตเนื้อเนียน ผสมเฮเซลนัทอบกรอบเต็มคำ</p>
+        <p class="price">140 บาท / แท่ง</p>
+        <div class="qty-control">
+          <button type="button" onclick="updateQty(2, -1)">-</button>
+          <span id="qty-2">0</span>
+          <button type="button" onclick="updateQty(2, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ฟอร์มสั่งซื้อ -->
+    <section class="checkout-box">
+      <h2>สรุปรายการและที่อยู่จัดส่ง</h2>
+      <div class="summary">
+        <p>ค่าสินค้า: <span id="subtotal">0</span> บาท</p>
+        <p>ค่าจัดส่ง: <span id="shipping">0</span> บาท</p>
+        <h3>ยอดรวมสุทธิ: <span id="total">0</span> บาท</h3>
+      </div>
+
+      <form id="order-form">
+        <label>ชื่อ-นามสกุล ผู้รับ *</label>
+        <input type="text" id="cust-name" required placeholder="เช่น สมชาย ใจดี">
+
+        <label>เบอร์โทรศัพท์ *</label>
+        <input type="tel" id="cust-phone" required placeholder="เช่น 0812345678">
+
+        <label>ที่อยู่จัดส่ง (พร้อมรหัสไปรษณีย์) *</label>
+        <textarea id="cust-address" rows="3" required placeholder="บ้านเลขที่ ถนน ตำบล อำเภอ จังหวัด รหัสไปรษณีย์"></textarea>
+
+        <button type="submit" id="submit-btn" class="btn-primary full-width">ยืนยันการสั่งซื้อ</button>
+      </form>
+      <div id="order-result" class="result-msg"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
